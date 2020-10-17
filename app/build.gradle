@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+android {
+//    signingConfigs {
+//        config {
+//            keyAlias 'aicai'
+//            keyPassword '123456'
+//            storeFile file('I:/zjy/project/aicai.jks')
+//            storePassword '123456'
+//        }
+//    }
+    compileSdkVersion 28
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.jinshu.weixinbook"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.config
+        }
+        debug {
+//            signingConfig signingConfigs.config
+            minifyEnabled false
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.each {
+                output -> output.outputFile = new File(output.outputFile.parent, "wxs"+ "_${releaseTime()}.apk");
+            }
+    }
+}
+def releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/volley-1.0.19.jar')
+    compile files('libs/commons-codec.jar')
+    compile files('libs/guava-r09.jar')
+    compile files('libs/sqlcipher.jar')
+    compile files('libs/fastjson-1.2.3.jar')
+    compile files('libs/open_sdk_r5781.jar')
+    compile files('libs/sqlcipher.jar')
+    compile files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
+    compile files('libs/SocialSDK_WeiXin_Full.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_tool.jar')
+    compile files('libs/glide-3.6.1.jar')
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.2'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+}

@@ -1,0 +1,40 @@
+先是找到自己的文件夹 开权限
+EnMicroMsg 看到自己的所有朋友的用户名
+	EnMicroMsg
+		rcontact
+			username
+所有朋友的循环 根据 alias 找到用户名
+
+个人的 用username
+	EnMicroMsg
+		rcontact
+			nickname
+个人的 用userneme 
+	EnMicroMsg
+		img_flag
+			reserved1
+最后用 username
+	SnsMicroMsg
+		snsInfo
+			 userName, content, type, head, createTime, stringSeq, attrBuf 
+我的
+先是找到自己的文件夹 开权限
+EnMicroMsg 看到自己的所有朋友的用户名
+	EnMicroMsg
+		rcontact
+			username
+
+遍历所有要下载的人，根据 nickname判断
+
+个人的 用username
+	EnMicroMsg
+		rcontact
+			nickname
+个人的 用userneme 
+	EnMicroMsg
+		img_flag
+			reserved1
+最后用 username
+	SnsMicroMsg
+		snsInfo
+			 userName, content, type, head, createTime, stringSeq, attrBuf 

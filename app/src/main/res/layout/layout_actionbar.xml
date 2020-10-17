@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2010 Johan Nilsson <http://markupartist.com>
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/screen"
+    android:layout_width="fill_parent"
+    android:layout_height="48dp"
+    android:background="@color/theme_color"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/actionbar_home"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/actionbar_height"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/actionbar_home_logo"
+            style="@style/ActionBarHomeLogo"
+            android:scaleType="fitCenter"
+            android:layout_width="@dimen/actionbar_item_width"
+            android:layout_height="@dimen/actionbar_height"
+            android:padding="0dip"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/actionbar_home_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/actionbar_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/actionbar_home_btn"
+                style="@style/ActionBarHomeItem"
+                android:background="@null"/>
+
+            <TextView
+                android:id="@+id/actionbar_home_text"
+                android:layout_width="45dip"
+                android:layout_height="45dip"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/rl_back"-->
+            <!--android:padding="0dip"-->
+            <!--android:layout_toLeftOf="@+id/actionbar_home_bg"-->
+            <!--android:layout_toStartOf="@+id/actionbar_home_bg"-->
+            <!--android:layout_width="@dimen/actionbar_item_width"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_height="@dimen/actionbar_height">-->
+            <!--<ImageView-->
+                <!--android:id="@+id/actionbar_home_is_back"-->
+                <!--android:layout_width="20dp"-->
+                <!--android:layout_height="20dp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:src="@mipmap/ic_back"-->
+                <!--android:visibility="visible" />-->
+
+        <!--</RelativeLayout>-->
+
+        <RelativeLayout
+            android:id="@+id/rl_next"
+            android:padding="0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/actionbar_height"
+            android:layout_alignParentRight="true"
+            >
+            <TextView
+                android:id="@+id/action_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginRight="36dp"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/actionbar_actions"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/actionbar_height"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="0dp"
+            android:background="@color/actionbar_separator"
+            android:orientation="horizontal"
+            android:padding="0dp" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_centerVertical="true">
+
+            <ProgressBar
+                android:id="@+id/actionbar_progress"
+                style="@style/ActionBarProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:indeterminateOnly="true"
+                android:paddingRight="7dip"
+                android:visibility="gone" />
+
+            <com.jinshu.weixinbook.widget.ScrollingTextView
+                android:id="@+id/actionbar_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/actionbar_progress"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:lines="1"
+                android:maxEms="10"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="36dp"
+                android:paddingRight="24dp"
+                android:scrollHorizontally="true"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
+

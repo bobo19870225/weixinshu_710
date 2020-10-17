@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_single"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.jinshu.weixinbook.activity.SingleActivity">
+
+    <include layout="@layout/layout_action_bar" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_name_tag"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="暂无数据"
+        android:textColor="#777777"
+        android:textSize="16sp"
+
+        />
+
+    <EditText
+        android:id="@+id/et_remark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="请输入备注"
+        android:layout_marginTop="20dp" />
+    <Button
+        android:id="@+id/but_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="right"
+        android:text="若正常上传无效，可尝试该按钮， （必须输入唯一备注）"
+        android:textColor="#777777"
+        android:textSize="14sp"
+
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#eeeeee" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/item_log_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="上传日志"
+            android:textColor="#333333"
+            android:textSize="16sp"
+
+            />
+
+
+        <TextView
+            android:id="@+id/item_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_log_tag"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:scrollbars="vertical"
+            android:text="暂无数据"
+            android:textColor="#777777"
+            android:textSize="16sp"
+
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
